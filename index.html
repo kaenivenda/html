@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KaeniVenda</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #100720;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+header {
+  padding: 25px;
+  background: #24103d;
+  color: #c58aff;
+  font-size: 27px;
+  font-weight: bold;
+}
+main { padding: 25px; }
+.card {
+  background: #24143a;
+  padding: 22px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+input, button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 9px;
+}
+input { background: #eee; }
+button {
+  background: #a34cff;
+  color: white;
+  font-weight: bold;
+}
+.status { color: #bca0dd; }
+</style>
+</head>
+<body>
+<header>KAENIVENDA</header>
+<main>
+  <h2>Free Fire Passes</h2>
+  <p class="status">Consulte as ofertas disponíveis!</p>
+
+  <div class="card">
+    <h3>🎁 Solicitar Passe</h3>
+    <input id="uid" placeholder="Digite seu ID do Free Fire">
+    <button onclick="solicitar()">Solicitar agora</button>
+    <p id="resultado"></p>
+  </div>
+
+  <div class="card">
+    <h3>📦 Minhas solicitações</h3>
+    <p>Consulte o status dos seus pedidos.</p>
+  </div>
+</main>
+
+<script>
+function solicitar() {
+  const uid = document.getElementById("uid").value.trim();
+
+  if (!/^\d{5,20}$/.test(uid)) {
+    document.getElementById("resultado").innerText =
+      "Digite um ID válido.";
+    return;
+  }
+
+  document.getElementById("resultado").innerText =
+    "Solicitação de demonstração recebida!";
+}
+</script>
+</body>
+</html>
+  
